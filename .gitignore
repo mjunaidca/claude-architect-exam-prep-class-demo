@@ -1,0 +1,8 @@
+# Markdown-only repo: ignore everything except directories, .md files,
+# this file, and the .github folder (CI workflow).
+*
+!*/
+!*.md
+!.gitignore
+!.github/
+!.github/**

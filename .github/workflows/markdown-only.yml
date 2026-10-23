@@ -1,0 +1,27 @@
+name: markdown-only
+
+# Run on every pull request, and on every push to main.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fail if any tracked file is not markdown
+        run: |
+          # List every tracked file, drop .md files and the allowed exceptions.
+          bad=$(git ls-files \
+            | grep -v -E '\.md$' \
+            | grep -v -E '^(\.gitignore$|\.github/)' || true)
+
+          if [ -n "$bad" ]; then
+            echo "These files are not markdown:"
+            echo "$bad"
+            exit 1
+          fi
+          echo "All files are markdown (or allowed exceptions)."
