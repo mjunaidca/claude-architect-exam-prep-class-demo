@@ -10,8 +10,11 @@ Early stage. The repo contains Markdown files only.
 
 ```
 .
-├── README.md      # this file
-└── ...            # topic notes added as Markdown files
+├── README.md                        # this file
+├── ci-notes.md                      # running Claude Code as a CI worker
+├── github-actions-and-triggers.md   # GitHub Actions triggers for agents
+├── tool-use-and-agentic-loops.md    # how tool calls and the agent loop work
+└── ...                              # topic notes added as Markdown files
 ```
 
 ## How to use
