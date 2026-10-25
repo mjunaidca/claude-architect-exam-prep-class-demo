@@ -1,0 +1,64 @@
+name: Daily Lesson
+
+# Every night Claude picks a topic, writes one new lesson, and opens a PR.
+# The PR auto-merges into main once the markdown-only `check` passes.
+on:
+  schedule:
+    - cron: "0 16 * * *" # 16:00 UTC = 9 PM Pakistan time (UTC+5)
+  workflow_dispatch: # "Run workflow" button in the Actions tab, for testing
+
+# Never run two lesson jobs at the same time (e.g. a manual run during the nightly one).
+concurrency:
+  group: daily-lesson
+  cancel-in-progress: false
+
+jobs:
+  write-lesson:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read # Claude pushes with its own GitHub App token, not this one
+      id-token: write # Required for the Claude action to get that token
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Get today's date (Pakistan time)
+        id: today
+        run: echo "date=$(TZ=Asia/Karachi date +%F)" >> "$GITHUB_OUTPUT"
+
+      - name: Write lesson with Claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          claude_args: >-
+            --max-turns 40
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(git checkout:*),Bash(git status:*),Bash(git diff:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(gh pr create:*),Bash(gh pr merge:*)"
+          prompt: |
+            You maintain a study repo for the Claude Architect exam. Add ONE new lesson today (${{ steps.today.outputs.date }}).
+
+            1. Choose the topic
+               - Read README.md and every existing .md lesson in the repo.
+               - Pick one topic relevant to the Claude Architect exam that is not already covered.
+                 Prefer a topic that builds on what exists. Do not repeat or lightly reword an existing lesson.
+
+            2. Write the lesson
+               - Create one new file at the repo root with a descriptive kebab-case name, e.g. `prompt-caching.md`.
+               - Match the style of the existing notes: a short intro, numbered sections, tables and code blocks where useful.
+               - Write for a beginner: plain language, one clear analogy per concept (an analogy that cannot mislead),
+                 and a short "check yourself" section with a few practice questions at the end.
+               - Markdown only. Do not create any non-.md file (the `check` workflow fails on anything else).
+               - Add the new file to the Structure block in README.md with a one-line description.
+
+            3. Ship it (run these exactly, substituting the file name and topic)
+               git checkout -b lesson/${{ steps.today.outputs.date }}
+               git add -A
+               git commit -m "docs: add lesson on <topic>"
+               git push -u origin lesson/${{ steps.today.outputs.date }}
+               gh pr create --base main --title "docs: add lesson on <topic>" --body "Daily lesson for ${{ steps.today.outputs.date }}: <one-sentence summary>."
+               gh pr merge --auto --squash
+
+            Do not modify files under .github/. Do not edit existing lessons except README.md.
