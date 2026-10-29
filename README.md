@@ -16,6 +16,7 @@ Early stage. The repo contains Markdown files only.
 ├── github-actions-and-triggers.md   # GitHub Actions triggers for agents
 ├── model-context-protocol.md        # MCP: connecting agents to shared tool servers
 ├── prompt-caching.md                # reusing a stable prompt prefix to cut cost and latency
+├── subagents-and-orchestration.md   # splitting work across agents with separate contexts
 ├── tool-use-and-agentic-loops.md    # how tool calls and the agent loop work
 └── ...                              # topic notes added as Markdown files
 ```
