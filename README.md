@@ -13,6 +13,7 @@ Early stage. The repo contains Markdown files only.
 ├── README.md                        # this file
 ├── ci-notes.md                      # running Claude Code as a CI worker
 ├── context-window-management.md     # keeping an agent's context from filling up
+├── evaluating-prompts-and-agents.md # measuring whether prompts and agents work with evals
 ├── github-actions-and-triggers.md   # GitHub Actions triggers for agents
 ├── model-context-protocol.md        # MCP: connecting agents to shared tool servers
 ├── prompt-caching.md                # reusing a stable prompt prefix to cut cost and latency
