@@ -11,6 +11,7 @@ Early stage. The repo contains Markdown files only.
 ```
 .
 ├── README.md                        # this file
+├── api-errors-rate-limits-and-retries.md # handling API errors, rate limits, and safe retries
 ├── ci-notes.md                      # running Claude Code as a CI worker
 ├── context-window-management.md     # keeping an agent's context from filling up
 ├── evaluating-prompts-and-agents.md # measuring whether prompts and agents work with evals
