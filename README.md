@@ -15,6 +15,7 @@ Early stage. The repo contains Markdown files only.
 ├── ci-notes.md                      # running Claude Code as a CI worker
 ├── context-window-management.md     # keeping an agent's context from filling up
 ├── evaluating-prompts-and-agents.md # measuring whether prompts and agents work with evals
+├── extended-thinking.md             # letting Claude reason first, and the loop rules it adds
 ├── github-actions-and-triggers.md   # GitHub Actions triggers for agents
 ├── human-in-the-loop-and-approval-gates.md # deciding which agent actions need human approval
 ├── model-context-protocol.md        # MCP: connecting agents to shared tool servers
