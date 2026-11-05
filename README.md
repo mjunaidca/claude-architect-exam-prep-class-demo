@@ -19,6 +19,7 @@ Early stage. The repo contains Markdown files only.
 ├── github-actions-and-triggers.md   # GitHub Actions triggers for agents
 ├── human-in-the-loop-and-approval-gates.md # deciding which agent actions need human approval
 ├── model-context-protocol.md        # MCP: connecting agents to shared tool servers
+├── model-selection-and-routing.md   # choosing and routing between models by quality, cost, and speed
 ├── prompt-caching.md                # reusing a stable prompt prefix to cut cost and latency
 ├── prompt-injection-and-agent-safety.md  # defending agents against injected instructions
 ├── structured-outputs-and-validation.md  # getting machine-readable output and checking it
