@@ -18,6 +18,7 @@ Early stage. The repo contains Markdown files only.
 ├── extended-thinking.md             # letting Claude reason first, and the loop rules it adds
 ├── github-actions-and-triggers.md   # GitHub Actions triggers for agents
 ├── human-in-the-loop-and-approval-gates.md # deciding which agent actions need human approval
+├── message-batches-and-async-processing.md # bulk, discounted async requests and partial failure
 ├── model-context-protocol.md        # MCP: connecting agents to shared tool servers
 ├── model-selection-and-routing.md   # choosing and routing between models by quality, cost, and speed
 ├── prompt-caching.md                # reusing a stable prompt prefix to cut cost and latency
