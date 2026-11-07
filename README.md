@@ -21,6 +21,7 @@ Early stage. The repo contains Markdown files only.
 ├── message-batches-and-async-processing.md # bulk, discounted async requests and partial failure
 ├── model-context-protocol.md        # MCP: connecting agents to shared tool servers
 ├── model-selection-and-routing.md   # choosing and routing between models by quality, cost, and speed
+├── observability-and-tracing-for-agents.md # logging traces and metrics to explain agent runs
 ├── prompt-caching.md                # reusing a stable prompt prefix to cut cost and latency
 ├── prompt-injection-and-agent-safety.md  # defending agents against injected instructions
 ├── structured-outputs-and-validation.md  # getting machine-readable output and checking it
