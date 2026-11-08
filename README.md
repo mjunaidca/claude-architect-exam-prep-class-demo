@@ -14,6 +14,7 @@ Early stage. The repo contains Markdown files only.
 ├── api-errors-rate-limits-and-retries.md # handling API errors, rate limits, and safe retries
 ├── ci-notes.md                      # running Claude Code as a CI worker
 ├── context-window-management.md     # keeping an agent's context from filling up
+├── designing-good-tools.md          # writing tool names, descriptions, schemas, and errors Claude can use
 ├── evaluating-prompts-and-agents.md # measuring whether prompts and agents work with evals
 ├── extended-thinking.md             # letting Claude reason first, and the loop rules it adds
 ├── github-actions-and-triggers.md   # GitHub Actions triggers for agents
