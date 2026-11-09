@@ -25,6 +25,7 @@ Early stage. The repo contains Markdown files only.
 ├── observability-and-tracing-for-agents.md # logging traces and metrics to explain agent runs
 ├── prompt-caching.md                # reusing a stable prompt prefix to cut cost and latency
 ├── prompt-injection-and-agent-safety.md  # defending agents against injected instructions
+├── streaming-responses.md           # receiving replies as events, including streamed tool calls and mid-stream failures
 ├── structured-outputs-and-validation.md  # getting machine-readable output and checking it
 ├── subagents-and-orchestration.md   # splitting work across agents with separate contexts
 ├── tool-use-and-agentic-loops.md    # how tool calls and the agent loop work
