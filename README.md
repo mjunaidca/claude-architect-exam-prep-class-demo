@@ -11,6 +11,7 @@ Early stage. The repo contains Markdown files only.
 ```
 .
 ├── README.md                        # this file
+├── agent-memory-and-state-persistence.md # saving facts and task state so agents remember across runs
 ├── api-errors-rate-limits-and-retries.md # handling API errors, rate limits, and safe retries
 ├── ci-notes.md                      # running Claude Code as a CI worker
 ├── context-window-management.md     # keeping an agent's context from filling up
