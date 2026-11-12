@@ -30,6 +30,7 @@ Early stage. The repo contains Markdown files only.
 ├── streaming-responses.md           # receiving replies as events, including streamed tool calls and mid-stream failures
 ├── structured-outputs-and-validation.md  # getting machine-readable output and checking it
 ├── subagents-and-orchestration.md   # splitting work across agents with separate contexts
+├── system-prompts-and-prompt-design.md # writing clear system prompts, examples, and rules
 ├── tool-use-and-agentic-loops.md    # how tool calls and the agent loop work
 └── ...                              # topic notes added as Markdown files
 ```
