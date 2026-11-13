@@ -32,6 +32,7 @@ Early stage. The repo contains Markdown files only.
 ├── subagents-and-orchestration.md   # splitting work across agents with separate contexts
 ├── system-prompts-and-prompt-design.md # writing clear system prompts, examples, and rules
 ├── tool-use-and-agentic-loops.md    # how tool calls and the agent loop work
+├── vision-and-document-inputs.md    # sending images and PDFs to Claude, with cost and accuracy limits
 └── ...                              # topic notes added as Markdown files
 ```
 
